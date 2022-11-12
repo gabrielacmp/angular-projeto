@@ -1,0 +1,24 @@
+<h1 class="text-center mt-3">{{titulo}}</h1>
+<div class="container">
+    <button class="btn btn-primary" (click)="clicar()">{{botao}}</button>
+    <div class="row">
+        <div class="col-4" *ngFor="let show of catalogoFotos; index as i">
+            <div *ngIf="!this.exibirPar">
+                <div class="card shadow mt-3" style="width: 18rem;" >
+                    <img [src]="show.img" class="card-img-top" alt="..." >
+                    <div class="card-body">
+                        <h5 class="card-title">{{show.titulo}}</h5>
+                    </div>
+                </div> 
+            </div>
+            <div *ngIf="this.exibirPar">
+                <div class="card shadow mt-3" style="width: 18rem;" *ngIf="i%2==0">
+                    <img [src]="show.img" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{show.titulo}}</h5>
+                    </div>
+                </div> 
+            </div>    
+        </div>
+    </div>
+</div>
